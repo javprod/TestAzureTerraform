@@ -3,9 +3,6 @@ name: Deployment Iac
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - 'iac/**'
-
 jobs:
   deploy:
     name: Terraform settings
