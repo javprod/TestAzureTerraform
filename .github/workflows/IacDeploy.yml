@@ -17,19 +17,19 @@ jobs:
     
     - name: Terraform init
       run: terraform init -backend-config="sas_token=${{ secrets.SAS_TOKEN }}"
-      working-directory: ./
+      working-directory: ./iac
 
     - name: Terraform validate
       run: terraform validate
-      working-directory: ./
+      working-directory: ./iac
 
     - name: Terraform plan
       run: terraform plan -var-file terraform.tfvars -out-plan.out
-      working-directory: ./
+      working-directory: ./iac
 
     - name: Terraform apply
       run: terraform apply -var-file terraform.tfvars -auto-approve
-      working-directory: ./
+      working-directory: ./iac
 
       
     
