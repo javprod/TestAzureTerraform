@@ -1,0 +1,13 @@
+name: Infraestructure Deployment
+on:
+  push:
+    branches: ["main"]
+jobs:
+  deploy:
+    name: Terraform settings
+    runs-on: ubuntu-lastest
+    steps: 
+    - name: Check out the repo
+      uses: actions/checkout@v3
+    - name: Terraform version
+      run: terraform version
